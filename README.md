@@ -13,6 +13,9 @@ Live Demo: [View on Render](https://flask-test-app-8s5k.onrender.com)
 ## Useful commands
 
 ```bash
+# install deps
+make install
+
 # Start Flask development server
 make start
 
