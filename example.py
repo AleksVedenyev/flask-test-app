@@ -22,7 +22,9 @@ repo = UserRepository(app.config['DATABASE_URL'])
 
 @app.route("/")
 def hello_world():
-    return "Welcome to Flask!"
+    flash("Welcome to Flask!", "info")
+    return redirect(url_for('users_get'), code=302)
+
 
 
 @app.route("/users")
@@ -95,7 +97,7 @@ def users_update(id):
     user_data['id'] = user['id']
     repo.save(user_data)
     flash("User was updated successfully", "success")
-    return redirect(url_for('users_index'), code=302)
+    return redirect(url_for('users_get'), code=302)
 
 
 
