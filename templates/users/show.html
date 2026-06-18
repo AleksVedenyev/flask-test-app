@@ -1,0 +1,14 @@
+<h3>Name= {{ user.name }}</h3>
+<h3>Email = {{ user.email }}</h3>
+
+<a href="{{ url_for('users_edit', id=user.id) }}">Изменить данные</a>
+
+<form action="{{ url_for('users_delete', id=user.id) }}" method="post" style="display:inline;"
+      onsubmit="return confirm('Вы уверены, что хотите удалить {{ user.name }}?');">
+    <button type="submit" style="background:none; border:none; color:blue; text-decoration:underline; cursor:pointer; padding:0; font-family:inherit; font-size:inherit;">
+        Удалить пользователя
+    </button>
+</form>
+
+<a href="{{ url_for('users_get') }}">Назад к списку пользователей</a>
+
